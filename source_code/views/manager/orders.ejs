@@ -1,0 +1,96 @@
+<% include ../partials/header-manager %>
+
+  <div class="col-md-9 ">
+    <div class="panel panel-default">
+      <div class="panel-heading">Παραγγελίες </div>
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="ui fixed  table">
+            <thead>
+              <tr>
+                <th colspan="4">
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <% var id_item = 0; %>
+                <% var id_parag = 0; %>
+                  <% var total = 0; %>
+                    <% var address = "" %>
+                      <% var name , sur %>
+                        <% orders.forEach(function(order){ %>
+                          <% if(id_parag != order.order_id) { %>
+                            <% if(id_parag !=0){ %>
+                              <tr class="sinolo">
+                                <td>
+                                  <strong>Σύνολο:</strong>
+                                  <%= total  %> &euro;
+                                </td>
+                                <td></td>
+                                <td><strong>Διεύθυνση Παράδοσης:</strong></td>
+                                <td>
+                                  <%- address %>
+                                </td>
+                              </tr>
+                              <% } %>
+                                <tr class="separator">
+                                  <td>
+                                    Αριθμός Παραγγελίας:
+                                    <%- order.parag_id %>
+                                  </td>
+                                  <td><strong>Όνομα Πελάτη: <%- order.pel_name  %> <%- order.pel_sur  %></strong></td>
+                                  <td><strong>Τηλέφωνο Πελάτη: <%- order.pel_phone %></strong></td>
+                                  <td>
+                                    <%- order.order_date %>
+                                  </td>
+                                </tr>
+                                <%  total = 0; %>
+                                  <% id_parag = order.order_id; %>
+                                    <tr class="tr-header">
+                                      <td><strong>Προιόν</strong></td>
+                                      <td><strong>Ποσότητα</strong></td>
+                                      <td><strong>Τιμή Προιόντος</strong></td>
+                                      <td></td>
+                                    </tr>
+                                    <% } %>
+                                      <tr id="<%- id_item %>" class="animated fadeIn">
+                                        <td>
+                                          <%- order.parag_proion %>
+                                        </td>
+                                        <td>
+                                          <%- order.posotita %>
+                                        </td>
+                                        <td>
+                                          <%- order.price %> &euro;
+                                        </td>
+                                        <td>
+                                        </td>
+
+                                      </tr>
+                                      <% id_item = id_item +1 ; %>
+                                        <% address =  order.order_addr %>
+                                          <% name = order.pel_name %>
+                                            <% sur = order.pel_sur %>
+                                              <% total = total + order.price*order.posotita %>
+                                                <%  }); %>
+                                                  <tr class="sinolo">
+                                                    <td>
+                                                      <strong>Σύνολο:</strong>
+                                                      <%= total  %> &euro;
+                                                    </td>
+                                                    <td></td>
+                                                    <td><strong>Διεύθυνση Παράδοσης:</strong></td>
+                                                    <td>
+                                                      <%- address %>
+                                                    </td>
+                                                  </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <% include ../partials/footer %>

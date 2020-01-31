@@ -1,0 +1,153 @@
+<% include partials/header %>
+
+  <!-- landing -->
+  <div class="container-fluid general">
+    <div class="row" id="welcome">
+      <div class="col-md-8">
+        <div class="jumbotron welcome-panel">
+          <h1>Παράγγειλε  <span class="" id="word-slide" > Καφέ</span> </h1>
+          <h1>online σε 1’. </h1>
+        </div>
+      </div>
+      <div class="col-md-4 pull-right">
+        <div class="center welcome-search-form" id="sign-in">
+          <h1><i class="fa fa-map-marker" aria-hidden="true"></i> <strong>Ξεκίνα</strong> την παραγγελία σου</h1>
+          <form>
+            <div class="form-group" id="addr">
+              <input class="form-control" type="text" id="autocomplete" onFocus="geolocate()" name="addr" placeholder="Γράψε την διευθυνσή σου" required/>
+            </div>
+            <h6> πχ. Αγίου Νικολάου 201 </h6>
+            <div class="form-group">
+              <%# <input class="btn btn-primary" type="submit" data-toggle="modal" data-target="#myModal" value="Παράγγειλε Τώρα"> %>
+                <button type="button" class="btn btn-info btn-lg" id="order-btn" data-toggle="modal" data-target="#myModal">Παράγγειλε Τώρα</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="container-fluid" id="about">
+    <div class="row">
+      <h3>Σχετικά με Εμάς</h3>
+      <hr>
+      <p>Η παραγγελία του ωμού κόκκου από τις καλύτερες φάρμες σε όλο τον κόσμο, η δημιουργία χαρμανιών, η εύρεση της ιδανικής καμπύλης καβουρδίσματος, η τελετουργία της παρασκευής των ροφημάτων, οι συνεχείς έλεγχοι, οι μετρήσεις, ο σχεδιασμός και το στήσιμο
+        του καταστήματος, η εκπαίδευση του προσωπικού των νέων και παλαιών καταστημάτων και η συνεχής υποστήριξή τους… όλα αντιμετωπίζονται με επιστημονικότητα και εμμονή στη λεπτομέρεια.</p>
+      <hr>
+    </div>
+  </div>
+  <div class="container-fluid" id="social">
+    <div class="row">
+      <a href="https://www.ceid.upatras.gr/el" target="_blank"><i class="fa fa-instagram fa-3x "></i></a>
+      <a href="https://www.ceid.upatras.gr/el" target="_blank"><i class="fa fa-facebook-square fa-3x"></i></a>
+      <a href="https://www.ceid.upatras.gr/el" target="_blank"><i class="fa fa-pinterest-square fa-3x"></i></a>
+    </div>
+  </div>
+  <div class="container-fluid" id="about-panels">
+    <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body imgs">
+            <img src="./stylesheets/imgs/coffeeshop.jpg" alt="..." class="img-thumbnail">
+            <p>Σεβασμός στον καταναλωτή, παρέχοντας υψηλής ποιότητας προϊόντα και υπηρεσίες.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="panel panel-default">
+
+          <div class="panel-body imgs">
+            <img src="./stylesheets/imgs/xeri.jpg" alt="..." class="img-thumbnail">
+            <p>Σεβασμός στον επιχειρηματία, ο οποίος εμπιστεύεται την αλυσίδα μας για να πραγματοποιήσει τα επιχειρηματικά του πλάνα και όνειρα.</p>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body imgs">
+            <img src="./stylesheets/imgs/coffeemake.jpg" alt="..." class="img-thumbnail">
+            <p>Aρμονικός συνδυασμός του παραδοσιακού καφεκοπτείου, που αποτελούσε πάντα ένα σημαντικό κομμάτι της ελληνικής γειτονιάς, με το μοντέρνο espresso bar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--  contact container -->
+  <div class="container-fluid center-text general" id="contact">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <ul>
+          <li><i class="fa fa-phone" aria-hidden="true"></i> Τηλέφωνο Επικοινωνίας: 2610 23432450</li>
+          <li><i class="fa fa-map-marker" aria-hidden="true"></i> Διεύθυνση Κεντρικού Καταστήματος: Αγίου Νικολάου 61 , Πάτρα , 26221</li>
+          <li><i class="fa fa-envelope" aria-hidden="true"></i> Email: contact@localcoffee.gr</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <!-- pop-up modal for address verification -->
+    <div id="myModal" class="modal fade" role="dialog">
+      <div class=" modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h3 class="modal-title"><strong>Επιβεβαίωση διεύθυνσης</strong></h3>
+            <h6>Παρακαλούμε επιβεβαίωσε ότι η διεύθυνσή σου έχει συμπληρωθεί σωστά.</h6>
+
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-8">
+                  <div id="map"></div>
+                </div>
+                <div class="col-md-4">
+                  <form id="post-addr" method="post">
+                    <div class="form-group field">
+                      <label for="order-addr">Διεύθυνση:</label>
+                      <input type="text" class="form-control" id="order-addr" name="addr" required />
+                    </div>
+                    <div class="form-group field">
+                      <label for="exampleInputEmail1">Περιοχή:</label>
+                      <input type="email" class="form-control" id="locality" placeholder="">
+                    </div>
+                    <div class="form-group field">
+                      <label for="exampleInputEmail1">Οδός:</label>
+                      <input type="email" class="form-control" id="route" placeholder="">
+                    </div>
+                    <div class="row">
+                      <div class="col-xs-6">
+                        <div class="form-group field">
+                          <label for="exampleInputEmail1">Αριθμός:</label>
+                          <input type="email" class="form-control" id="street_number" placeholder="" required />
+                        </div>
+                      </div>
+                      <div class="col-xs-6">
+                        <div class="form-group field">
+                          <label for="exampleInputEmail1">Τ.Κ:</label>
+                          <input type="email" class="form-control" id="postal_code" placeholder="">
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <h6>Έαν η διεύθυνσή σου δεν χρειάζεται διόρθωση πάτα "Συνέχεια".</h6>
+            <button onclick="form_submit()" class="btn btn-success pull-right" id="postform-btn" type="click">Συνέχεια</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn1" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i> Top</button>
+
+
+
+    <% include partials/footer %>

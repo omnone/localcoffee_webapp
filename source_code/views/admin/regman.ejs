@@ -1,0 +1,49 @@
+<% include ../partials/header %>
+  <div class="container">
+    <div class="row">
+      <h1 class="post-form-title">Εγγραφή Υπεύθυνου Καταστήματος</h1>
+
+      <div class="post-form">
+
+        <form action="/regman" method="POST">
+          <div class="form-group">
+            <label >Όνομα :</label>
+            <input class="form-control" type="text" name="name" placeholder="Όνομα">
+          </div>
+          <div class="form-group">
+            <label >Επώνυμο :</label>
+            <input class="form-control" type="text" name="surname" placeholder="Επώνυμο">
+          </div>
+          <div class="form-group">
+            <label >Username :</label>
+            <input class="form-control" type="text" name="username" placeholder="Username">
+          </div>
+          <div class="form-group">
+            <label >Κωδικός :</label>
+            <input class="form-control" type="password" name="password" placeholder="Κωδικός">
+          </div>
+          <div class="form-group">
+            <label >ΑΜΚΑ :</label>
+            <input class="form-control" type="text" name="amka" placeholder="AMKA">
+          </div>
+          <div class="form-group">
+            <label >ΑΦΜ :</label>
+            <input class="form-control" type="text" name="afm" placeholder="ΑΦΜ">
+          </div>
+          <div class="form-group">
+            <label >IBAN :</label>
+            <input class="form-control" type="text" name="iban" placeholder="IBAN">
+          </div>
+          <hr>
+
+          <div class="form-group">
+            <button class="btn btn-lg btn-primary btn-block">Εγγραφή!</button>
+          </div>
+
+        </form>
+
+        <a href="/index">Πήγαινε Πίσω</a>
+      </div>
+    </div>
+  </div>
+  <% include ../partials/footer %>

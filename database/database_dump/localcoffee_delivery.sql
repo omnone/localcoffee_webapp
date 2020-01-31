@@ -1,0 +1,60 @@
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+--
+-- Host: localhost    Database: localcoffee
+-- ------------------------------------------------------
+-- Server version	5.7.19-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `delivery`
+--
+
+DROP TABLE IF EXISTS `delivery`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `delivery` (
+  `deliv_id` int(10) unsigned NOT NULL,
+  `deliv_name` varchar(25) NOT NULL DEFAULT 'unknown',
+  `deliv_sur` varchar(25) NOT NULL DEFAULT 'unknown',
+  `deliv_afm` varchar(10) NOT NULL DEFAULT 'unknown',
+  `deliv_amka` varchar(11) NOT NULL DEFAULT 'unknown',
+  `deliv_iban` varchar(27) NOT NULL DEFAULT 'unknown',
+  `deliv_katastasi` enum('on','off') DEFAULT NULL,
+  `deliv_lat` double(20,10) NOT NULL DEFAULT '0.0000000000',
+  `deliv_lng` double(20,10) NOT NULL DEFAULT '0.0000000000',
+  `deliv_ores` double(20,10) NOT NULL DEFAULT '0.0000000000',
+  PRIMARY KEY (`deliv_id`),
+  CONSTRAINT `IDDELIV` FOREIGN KEY (`deliv_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `delivery`
+--
+
+LOCK TABLES `delivery` WRITE;
+/*!40000 ALTER TABLE `delivery` DISABLE KEYS */;
+INSERT INTO `delivery` VALUES (5,'Ορέστης','Παπαιωάννου','1458756821','23031545859','GR1601101250000000012300123','off',38.2466395000,21.7345740000,0.0000000000),(6,'Αλέξανδρος','Κουτσαντωνίου','1458756111','23031541123','GR1601101250000000012300111','off',38.2466395000,21.7345740000,0.0000000000),(7,'Βασίλης','Βείτης','1458756126','23031325821','GR1601101250000000012312300',NULL,0.0000000000,0.0000000000,0.0000000000);
+/*!40000 ALTER TABLE `delivery` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2018-02-18 23:25:28

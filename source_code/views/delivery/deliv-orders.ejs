@@ -1,0 +1,56 @@
+<% include ../partials/header %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Παραγγελία προς παράδοση:</div>
+    <div class="panel-body" id="ok">
+      <ul id="order-details">
+        <% if (  delivery[0] != null) { %>
+          <% if (delivery[0].order_katastasi != 'delivered' ){ %>
+            <li><strong>Όνομα Πέλατη:</strong><br>
+              <%- delivery[0].pel_name %>
+                <%- delivery[0].pel_sur %>
+            </li>
+            <li><strong>Διεύθυνση:</strong></li>
+            <li id="address">
+              <%- delivery[0].order_addr %>
+            </li>
+            <li><strong>Τηλέφωνο:</strong><br>
+              <%- delivery[0].pel_phone%>
+            </li>
+            <li><strong>Κατάστημα Εξυπηρέτησης:</strong><br>
+              <%- delivery[0].order_kat %>
+            </li>
+            <li><strong>Ημ/νία & Ώρα:</strong><br>
+              <span id = "date"><%- delivery[0].order_date %></span>
+            </li>
+            <li id="deliv-lat" hidden>
+              <%- delivery[0].deliv_lat %>
+            </li>
+            <li id="deliv-lng" hidden>
+              <%- delivery[0].deliv_lng %>
+            </li>
+            <% } %>
+              <% } else { %>
+                <li>Καμία παραγγελία προς παράδοση..</li>
+                <% } %>
+
+      </ul>
+      <div id="map" class="mobile"></div>
+        <% if (  delivery[0] != null) { %>
+      <hr>
+      <button class="btn btn-warning shadow" id="direction-btn"><i class="fa fa-compass  " aria-hidden="true"></i> Οδηγίες</button>
+      <hr>
+      <button class="btn btn-success" id="paradosi-btn" onclick="finish_order()"><i class="fa fa-check-square-o" aria-hidden="true"></i> Παραδόθηκε</button>
+      <hr>
+      <% } else {%>
+      <hr>
+      <button class="btn btn-success shadow" id="reload-btn">Βρες Παραγγελία</button>
+      <hr>
+      <a class="btn btn-danger shadow" href="/index" id="paradosi-btn">Πίσω</a>
+
+      <% } %>
+
+    </div>
+  </div>
+
+  <% include ../partials/footer %>

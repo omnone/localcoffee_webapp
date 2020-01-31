@@ -1,0 +1,23 @@
+<% include ../partials/header-admin %>
+
+  <div class="col-md-10 ">
+
+    <div class="panel panel-default">
+      <div class="panel-heading"><strong>Μισθοδοσία για:
+        <%- month %> /
+          <%- year %>
+        </strong>
+        <button type="button" style="padding:3px" class="btn btn-info pull-right">Αποστολή</button>
+      </div>
+      <div class="panel-body">
+         <textarea rows="25" cols="40" style="border:none;">
+                  <%- xml %>
+         </textarea>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+
+  <% include ../partials/footer%>

@@ -1,0 +1,693 @@
+body {
+  padding-top: 40px;
+  background: #EB3349;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #F45C43, #EB3349);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #F45C43, #EB3349);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  position: relative;
+  color: white;
+  background-image: url("/imgs/coffee1.jpg") no-repeat fixed center center;
+  font-size: 15px !important;
+  font-family: Roboto !important;
+  transition: background-color .5s;
+}
+
+td {
+  min-width: 10px;
+}
+
+i {
+  transition: 0.2s linear;
+}
+
+footer {
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 5px;
+  padding-left: 30px;
+  resize: none;
+}
+
+.panel-side {
+  background: black !important;
+  color: white;
+}
+
+input[type="number"] {
+  width: 45px;
+}
+
+.separator {
+  color: white;
+  background-color: black;
+}
+
+.tr-header {
+  background-color: rgb(235, 232, 240);
+  line-height: 10px !important;
+  border-radius: 5px;
+}
+
+.sinolo {
+  background-color: rgb(235, 232, 240);
+}
+
+.quant-btn {
+  border-radius: 5px;
+  background: none !important;
+  margin: 3px;
+}
+
+@media screen and (max-width: 699px) {
+  .quant-btn {
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+  }
+  .add_cart {
+    font-size: 13px !important;
+  }
+}
+
+.add_cart {
+  font-size: 17px !important;
+}
+
+.input-values {
+  border-radius: 5px;
+  width: 50px;
+}
+
+.post-form {
+  width: 50%;
+  margin: 25px auto;
+  background: rgb(38, 38, 38) !important;
+  background: rgb(38, 38, 38, 0.5) !important;
+  color: rgb(217, 217, 217) !important;
+  padding: 30px 50px;
+  padding-top: 40px;
+  border-radius: 10px;
+  min-width: 350px;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.navbar-brand {
+  border-right: rgb(217, 217, 217) 1px solid;
+  border-radius: 2px;
+  font-family: Lobster;
+  font-size: 20px !important;
+}
+
+.navbar-brand:hover {
+  color: #EB3349;
+}
+
+.navbar-custom {
+  /* background: rgb(38, 38, 38, 0.9); */
+  background: #000000;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #434343, #000000);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #434343, #000000);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: rgb(217, 217, 217);
+  font-size: 15px !important;
+  margin-bottom: 10px !important;
+}
+
+.navbar-custom a {
+  color: rgb(217, 217, 217);
+}
+
+.navbar-custom .navbar-nav>.active>a {
+  color: white;
+  background-color: transparent;
+}
+
+li.active a, li.active a:hover {
+  font-weight: bold;
+  color: white;
+  background: none;
+  border-bottom: 1px solid white;
+  #0088cc;
+  display: inline;
+}
+
+.alert {
+  margin-top: 30px !important;
+  margin-bottom: 5px !important;
+}
+
+.navbar-custom .navbar-nav>li>a:hover, .navbar-custom .navbar-nav>li>a:focus, .navbar-custom .navbar-nav>.active>a:hover, .navbar-custom .navbar-nav>.active>a:focus, .navbar-custom .navbar-nav>.open>a {
+  font-weight: bold;
+  color: white;
+  background: none;
+  border-bottom: 1px solid white;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: rgb(217, 217, 217);
+}
+
+.general {
+  background-image: url('./imgs/cafeparea.jpg');
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 30px;
+  border-radius: 10px;
+  color: white;
+}
+
+@media screen and (min-width:1380px) and (max-width:3159px) {
+  .general {
+    margin-top: 50px;
+    height: 100px !important;
+    padding-bottom: 100px;
+  }
+  body {
+    font-size: 20px !important;
+  }
+  .welcome-search-form {
+    width: 80% !important;
+  }
+}
+
+.rounded {
+  border-radius: 5px;
+  width: 95% !important;
+  height: auto;
+  min-width: 150px !important;
+  margin-bottom: 20px !important;
+  max-width: 100%;
+}
+
+#about-panels p {
+  color: black;
+  border-radius: 5px;
+  padding: 2px;
+  text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+}
+
+.imgs p {
+  border-radius: 6px;
+  border: black 1px solid !important;
+  font-size: 15px !important;
+  padding: 5px;
+}
+
+.imgs {
+  height: 450px !important;
+}
+
+.imgs img {
+  margin-bottom: 10px !important;
+  height: 250px !important;
+}
+
+@media screen and (max-width: 699px) {
+  .rounded {
+    border-radius: 5px;
+    width: 270px !important;
+    height: 170px !important;
+    min-width: 150px !important;
+    margin-bottom: 20px !important;
+    padding: 5px !important;
+  }
+  .imgs {
+    padding: 0 !important;
+  }
+  .imgs img {
+    height: 200px !important;
+    margin-bottom: 10px !important;
+    padding: 5px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .imgs {
+    height: 10% !important;
+  }
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Open Sans Light Italic'), local('OpenSans-LightItalic'), url(https://fonts.gstatic.com/s/opensans/v15/PRmiXeptR36kaC0GEAetxv14vlcfyPYlAcQy2UfDRm4.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+
+.welcome-search-form {
+  padding: 30px 40px;
+  background: #f1f1f1;
+  background-image: none;
+  background-image: linear-gradient(to top, #f1f1f1, #fff);
+  box-shadow: 0 0 5px 0;
+  margin-bottom: 0;
+  width: 85% !important;
+  min-width: 250px;
+  border-radius: 10px;
+}
+
+.categories-menu {}
+
+.welcome-search-form .form-group, .welcome-search-form #addr {
+  padding-bottom: 10px;
+}
+
+.welcome-search-form h1 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: none;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav li {
+  list-style: none;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: white;
+}
+
+.sidenav .closebtn {
+  font-size: 36px;
+  margin-left: 50px;
+  margin-bottom: 2px;
+}
+
+#xicon {
+  color: white !important;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+
+#mob-table {
+  background: white;
+}
+
+#admin-title {
+  padding-left: 10px;
+  margin-top: 25px;
+}
+
+#selectManager {
+  width: 150px;
+}
+
+.add_manager {
+  width: 150px!important;
+}
+
+#admin-sidepanel li {
+  list-style: none;
+  margin-bottom: 10px !important;
+}
+
+#admin-sidepanel li hr{
+  width: 120px;
+}
+
+#admin-sidepanel ul, #admin-sidepanel li {
+  margin: 0;
+  padding: 0;
+}
+
+#mob-quant {
+  border-radius: 5px !important;
+  font-size: 22px !important;
+  padding: 4px;
+}
+
+.table {
+  border-radius: 5px !important;
+  border: 0 !important;
+}
+
+.table-responsive {
+  border: 0 !important;
+}
+
+#admin-sidepanel {
+  text-align: left;
+  width:200px;
+}
+
+#no-quant {
+  font-size: 16px;
+  color: red;
+  display: none;
+}
+
+#order-info {
+  padding: 20px;
+}
+
+.desktop {
+  width: 400px;
+  position: fixed;
+}
+
+/* #order li{
+  list-style: none;
+} */
+
+#order-total {
+  text-align: center;
+}
+
+#menu-title {
+  padding-left: 20px;
+  margin-top: 20px;
+}
+
+#order-info {
+  margin-top: 20px;
+}
+
+#footer-logo {
+  margin-top: 20px;
+}
+
+#mob-table td {
+  width: 10px !important;
+  word-break: break-all !important;
+  white-space: normal;
+}
+
+#mob-table {
+  table-layout: fixed
+}
+
+#order-info li span {
+  background: rgb(31, 31, 20);
+  height: 30px;
+  margin-right: 20px;
+  text-align: center;
+  color: white;
+  width: 0;
+  display: inline-block;
+  transition: 0.2s linear;
+  opacity: 0;
+}
+
+#order-info li:hover span {
+  width: 35px;
+  opacity: 1.0;
+}
+
+#map {
+  border-radius: 6px;
+  border: light-gray 1px solid;
+  width: 100% !important;
+}
+
+#paradosi-btn {
+  width: 100%;
+  height: 50px;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+  font-size: 26px;
+}
+
+#direction-btn {
+  width: 100%;
+  height: 50px;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+  font-size: 26px;
+}
+
+#reload-btn {
+  width: 100%;
+  height: 50px;
+  box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 10px 0 rgba(0, 0, 0, 0.19);
+  font-size: 26px;
+}
+
+#submit-deliv {
+  width: 100% !important;
+}
+
+#order-details {
+  border: black 1px solid;
+  border-radius: 7px;
+  padding: 10px;
+  list-style: none;
+}
+
+#postform-btn {
+  height: 40px;
+  width: 150px;
+}
+
+#delivery_btn, #autocomplete, #finish-order {
+  height: 50px;
+}
+
+#delivery_btn {
+  width: 50px;
+}
+
+#katastasi-toggle {
+  font-size: 20px;
+}
+
+#total-mob {
+  font-size: 20px;
+  margin-right: 40px;
+}
+
+#order {
+  font-size: 18px;
+}
+
+#order-details li {
+  margin-bottom: 10px;
+}
+
+#order-details #address {
+  text-decoration: underline;
+}
+
+#order-details {
+  background: rgb(241, 241, 241);
+}
+
+.post-form-title {
+  text-align: center;
+}
+
+#about-panels {
+  margin-top: 40px;
+  text-align: center;
+}
+
+#about-panels .panel-body {
+  padding: 40px 40px;
+  background: #f1f1f1;
+  background-image: none;
+  background-image: linear-gradient(to top, #f1f1f1, #fff);
+  box-shadow: 0 0 5px 0;
+  margin-bottom: 0;
+}
+
+#about {
+  background: rgb(38, 38, 38) !important;
+  background: rgb(38, 38, 38, 0.5) !important;
+  padding: 40px 40px;
+  color: white !important;
+  margin-top: 40px;
+  text-align: center;
+  border-radius: 10px !important;
+}
+
+#about h3 {
+  border: 1px solid white;
+  border-radius: 4px;
+  display: inline;
+  padding: 5px;
+  margin-bottom: 25px !important;
+}
+
+#social {
+  text-align: center;
+  margin: 15px;
+  padding-top: 20px;
+}
+
+#social a i {
+  padding-right: 20px;
+}
+
+#social a {
+  color: #333;
+}
+
+#sign-in h1 {
+  color: black;
+  font-size: 30px;
+}
+
+#sign-in h6 {
+  color: black;
+}
+
+#contact {
+  text-align: center;
+  margin-top: 40px;
+  min-height: 200px;
+  text-shadow: 1px 1px 2px black;
+  font-size: 20px;
+}
+
+#contact ul {
+  padding: 10px;
+}
+
+#contact li {
+  list-style: none;
+}
+
+#welcome {
+  padding-top: 50px;
+}
+
+#myBtn {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 20px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background: rgb(38, 38, 38);
+  background: rgb(38, 38, 38, 0.9);
+  color: rgb(217, 217, 217);
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 5px;
+  /* Some padding */
+  border-radius: 5px;
+  /* Rounded corners */
+}
+
+#myBtn1 {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 20px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background: rgb(38, 38, 38);
+  background: rgb(38, 38, 38, 0.9);
+  color: rgb(217, 217, 217);
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 5px;
+  /* Some padding */
+  border-radius: 5px;
+  /* Rounded corners */
+}
+
+#myBtn:hover {
+  font-weight: bold;
+  color: hite;
+  /* Add a dark-grey background on hover */
+}
+
+#myModal {
+  color: black !important;
+  text-shadow: none !important;
+  text-align: left;
+}
+
+.modal-dialog {
+  margin: auto;
+}
+
+.modal-dialog label {
+  font-size: 15px;
+}
+
+#map {
+  width: 400px;
+  height: 300px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .welcome-search-form {
+    float: none;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 100% !important;
+  }
+}
+
+.welcome-panel {
+  background: rgb(38, 38, 38) !important;
+  background: rgb(38, 38, 38, 0.5) !important;
+  color: rgb(217, 217, 217) !important;
+}
+
+.welcome-panel p {
+  border: 1px solid rgb(102, 102, 102) !important;
+  border-radius: 10px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}

@@ -1,0 +1,85 @@
+<!--
+ _                     _ _____        __  __
+| |                   | /  __ \      / _|/ _|
+| |     ___   ___ __ _| | /  \/ ___ | |_| |_ ___  ___
+| |    / _ \ / __/ _` | | |    / _ \|  _|  _/ _ \/ _ \
+| |___| (_) | (_| (_| | | \__/\ (_) | | | ||  __/  __/
+\_____/\___/ \___\__,_|_|\____/\___/|_| |_| \___|\___|
+
+Author: Konstantinos Bourantas 6145
+
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LocalCofee | Order Online</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"> -->
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/table.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/icon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/menu.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/item.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/grid.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/container.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/alertify.min.css"/>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.0/build/css/themes/bootstrap.min.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="100">
+  <!-- navigation bar -->
+  <nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar bar-top"></span>
+                    <span class="icon-bar bar-mid"></span>
+                    <span class="icon-bar bar-bot"></span>
+                </button>
+        <a href="/" class="navbar-brand "><i class="fa fa-coffee" aria-hidden="true"></i> LocalCoffee</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-nav-demo">
+        <ul class="nav navbar-nav">
+          <li><a href="/">Αρχική</a></li>
+          <li><a href="/#about">Σχετικά </a></li>
+          <li><a href="/#contact">Επικοινωνία</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if(!currentUser){ %>
+            <li><a href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i> Είσοδος</a></li>
+            <li><a href="/register"><i class="fa fa-user-plus" aria-hidden="true"></i> Εγγραφή</a></li>
+            <% } else { %>
+              <li><a href="/index"><i class="fa fa-user" aria-hidden="true"></i> <%= currentUser.username %></a></li>
+              <li><a href="/logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Έξοδος</a></li>
+              <% } %>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <% if(error && error.length > 0){ %>
+      <div class="alert alert-danger " role="alert">
+        <button type="button" class="close" aria-hidden="true">&times;</button>
+        <%= error %>
+      </div>
+      <% } %>
+        <% if(success && success.length > 0){ %>
+          <div class="alert alert-success fade in" role="alert">
+            <button type="button" class="close" aria-hidden="true">&times;</button>
+            <%= success %>
+          </div>
+          <% } %>
+  </div>

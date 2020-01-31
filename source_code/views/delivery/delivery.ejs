@@ -1,0 +1,49 @@
+<% include ../partials/header %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3>Ρυθμίσεις:</h3>
+    </div>
+
+    <div class="panel-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-12">
+            <ul style="list-style:none">
+              <% if (delivery[0].deliv_katastasi == 'off'){ %>
+                <li><span id="katastasi-toggle"><strong>Κατάσταση:</strong> <span id="kat_deliv">Ανενεργός</span> <i class="fa fa-toggle-off fa-2x pull-right" id="switch" aria-hidden="true"></i></span>
+                </li><br>
+                <% } else { %>
+                  <li><span id="katastasi-toggle"><strong>Κατάσταση:</strong> <span id="kat_deliv">Ενεργός</span> <i class="fa fa-toggle-on fa-2x pull-right" id="switch" aria-hidden="true"></i></span>
+                  </li><br>
+                  <% } %>
+                    <br>
+                    <li><strong>Ώρες Εργασίας: </strong>
+                      <%- parseFloat(Math.round(delivery[0].total_hours * 100) / 100).toFixed(2) %> ώρες</li>
+                    <li><strong>Σύνολο Εσόδων:</strong>
+                      <%- parseFloat(xiliometra[0].total_xiliometra)*0.1 + parseFloat(delivery[0].total_hours)*5  %> &euro;
+                        <li>
+                          <li id="deliv-lat" hidden>
+                            <%- delivery[0].deliv_lat %>
+                          </li>
+                          <li id="deliv-lng" hidden>
+                            <%- delivery[0].deliv_lng %>
+                          </li>
+            </ul>
+            <hr>
+            <div class="input-group">
+              <span class="input-group-btn">
+          <button class="btn btn-secondary" type="button" id="delivery_btn"><i class="fa fa-location-arrow" aria-hidden="true"></i></button>
+        </span>
+              <input class="form-control" type="text" id="autocomplete" onFocus="geolocate()" name="addr" placeholder="Γράψε την διευθυνσή σου" required/>
+            </div>
+            <hr>
+            <div id="map" class="mobile"></div>
+            <hr>
+            <button class="btn btn-primary btn-lg" id="submit-deliv" onclick="ksekina_vardia()"><i class="fa fa-check" aria-hidden="true"></i> Ξεκίνα</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% include ../partials/footer %>

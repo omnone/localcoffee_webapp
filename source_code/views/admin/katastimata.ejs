@@ -1,0 +1,73 @@
+<% include ../partials/header-admin %>
+
+  <%# +2 </div> %>
+    <div class="col-md-10 ">
+      <div class="panel panel-default">
+        <div class="panel-heading">Καταστήματα</div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="ui celled padded table">
+              <thead>
+                <tr>
+                  <th colspan="5">
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Όνομα Καταστήματος</strong></td>
+                  <td><strong>Διεύθυνση</strong></td>
+                  <td><strong>Τηλέφωνο</strong></td>
+                  <td><strong>Υπεύθυνος</strong></td>
+
+                </tr>
+                <% var id_item = 0; %>
+                  <% shops.forEach(function(shop){ %>
+                    <tr id="<%- id_item %>" class="animated fadeIn">
+                      <td class="name">
+                        <%- shop.kat_name %>
+                      </td>
+                      <td>
+                        <span id="price"><%- shop.kat_lat%> , <%- shop.kat_lng%></span>
+                      </td>
+                      <td>
+                        <span id="price"><%- shop.kat_phone %></span>
+                      </td>
+                      <td>
+                        <select id="selectManager">
+
+                        <% if(!shop.kat_manager){ %>
+                          <option value="No Manager" selected="selected">Καμία Καταχώρηση</option>
+
+                         <% } %>
+
+                          <% managers.forEach(function(manager){ %>
+                             <% if( shop.kat_manager === manager.man_id ){ %>
+                              <option value="<%= manager.man_id %>" selected="selected"><%= manager.man_name+" "+manager.man_sur %></option>
+                              <% } else  { %>
+                               <option value="<%= manager.man_id %>"><%= manager.man_name+" "+manager.man_sur %></option>
+                            <% } %>
+
+                          <% }); %>
+
+                        </select>
+                        <br><br>
+                      </td>
+                      <td>
+
+                        <button class="btn btn-primary add_manager pull-right">Ορισμός Υπεύθυνου</button>
+
+                      </td>
+                    </tr>
+                    <% id_item = id_item +1 ; %>
+                      <%  }); %>
+              </tbody>
+            </table>
+            <a href="/addshop">Προσθήκη Καταστήματος <i class="fa fa-plus" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <% include ../partials/footer %>

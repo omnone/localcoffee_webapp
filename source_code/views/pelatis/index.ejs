@@ -1,0 +1,123 @@
+<% include ../partials/header %>
+
+  <div class="container">
+    <div class="row">
+      <div class=" col-sm-6 col-md-8 col-lg-8">
+        <div class="panel panel-default" id="menu-title">
+          <div class="panel-header">
+            <h1 class="animated slideInUp">Κατάλογος</h1>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="ui fixed table">
+            <thead>
+              <tr>
+                <th colspan="3">
+                  Καφές
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Όνομα</strong></td>
+                <td><strong>Ποσότητα</strong></td>
+              </tr>
+              <% var id_item = 0; %>
+                <% items.forEach(function(item){ %>
+
+                  <% if(item.eidos === "kafes"){ %>
+
+                    <tr id="<%- id_item %>" class="animated fadeIn">
+                      <td class="name">
+                        <%- item.name %>
+                      </td>
+                      <td>
+                        <button class="quant-btn minus"><i class="fa fa-minus" aria-hidden="true"></i></button> <input class="input-values" id="quantity" type="number" min="1" max="<%- item.posotita %>" value="1"><button class="quant-btn plus"><i class="fa fa-plus" aria-hidden="true"></button></i>
+                      </td>
+                      <td>
+                        <button class="btn btn-primary add_cart"><i class="fa fa-shopping-cart" aria-hidden="true"><span id="price">  <%- parseFloat(Math.round(item.price * 100) / 100).toFixed(2) %></span>&euro;</i></button>
+                      </td>
+                    </tr>
+                    <% id_item = id_item +1 ; %>
+                      <% } }); %>
+            </tbody>
+            <thead>
+              <tr>
+                <th colspan="3">
+                  Μικρογεύματα
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+
+                <td><strong>Όνομα</strong></td>
+                <td><strong>Ποσότητα</strong></td>
+
+              </tr>
+              <% items.forEach(function(item){ %>
+                <% if(item.eidos === "geuma"){ %>
+                  <% if(item.posotita <= 0) { %>
+                    <tr id="<%- id_item %>" class="animated fadeIn disabled" disabled>
+                      <% }else{ %>
+                        <tr id="<%- id_item %>" class="animated fadeIn">
+                          <% } %>
+                            <td class="name">
+                              <%- item.name %>
+                            </td>
+                            <td>
+                              <button class="quant-btn minus"><i class="fa fa-minus" aria-hidden="true"></i></button> <input class="input-values" id="quantity" type="number" min="1" max="<%- item.posotita %>" value="1"><button class="quant-btn plus"><i class="fa fa-plus" aria-hidden="true"></button></i>
+                              <span id="no-quant"><i class="fa fa-exclamation-triangle" id ="alert-quant" aria-hidden="true"></i></span>
+                            </td>
+                            <td>
+                              <button class="btn btn-primary add_cart"><i class="fa fa-shopping-cart" aria-hidden="true"><span id="price"> <%- parseFloat(Math.round(item.price * 100) / 100).toFixed(2) %></span>&euro;</i></button>
+                            </td>
+                        </tr>
+                        <% id_item = id_item +1 ; %>
+                          <% } }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-4 ">
+        <div class="panel panel-default desktop" id="order-info">
+          <div class="panel-body">
+            <h4 style="text-transform: uppercase;"><strong>Η Παραγγελία σου</strong></h4>
+            <hr>
+            <h5><strong><%- pel[0].pel_name %> <%- pel[0].pel_sur %> </strong></h5>
+            <h5><i class="fa fa-map-marker" aria-hidden="true"></i> <%= addr %></h5>
+            <h5>Τηλ. <%- pel[0].pel_phone %></h5>
+            <hr>
+
+            <ol id="order">
+
+            </ol>
+            <hr>
+
+            <div class="input-group">
+              <p><strong>Σύνολο: </strong><span id="order-total">0</span> &euro;</p>
+              <hr>
+              <% if (addr === "-"){ %>
+                <button class=" btn btn-success" id="" disabled><i class="fa fa-shopping-cart" ></i> Ολοκλήρωση </button>
+                <% }else { %>
+                  <button class=" btn btn-success" id="finish-order"><i class="fa fa-shopping-cart" ></i> Ολοκλήρωση </button>
+                  <% } %>
+                    <%# <input type="text" class="form-control" placeholder="Ποσό Παραγγελείας" id="order-total" readonly="readonly" aria-describedby="basic-addon1"> %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    //<!--
+    if (screen.width <= 699) {
+      document.location = "mobile";
+    }
+    //-->
+  </script>
+
+
+  <% include ../partials/footer %>

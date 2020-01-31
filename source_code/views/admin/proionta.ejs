@@ -1,0 +1,51 @@
+<% include ../partials/header-admin %>
+
+
+  <div class="col-md-10 ">
+    <div class="panel panel-default">
+      <div class="panel-heading">Προιόντα</div>
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="ui celled padded table">
+            <thead>
+              <tr>
+                <th colspan="4">
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Όνομα</strong></td>
+                <td><strong>Τιμή</strong></td>
+
+              </tr>
+              <% var id_item = 0; %>
+                <% items.forEach(function(item){ %>
+                  <tr id="<%- id_item %>" class="animated fadeIn">
+                    <td class="name">
+                      <%- item.name %>
+                    </td>
+                    <td>
+                      <input class="input-values" id="price" type="text"  value="<%- item.price %>">
+                    </td>
+                    <td>
+                      <button class="btn btn-success refresh-adm-item pull-right"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                    </td>
+                    <td>
+                      <button class="btn btn-danger disable-adm-item"><i class="fa fa-window-close" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+
+                  <% id_item = id_item +1 ; %>
+
+                    <%  }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <% include ../partials/footer %>
